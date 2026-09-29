@@ -1,0 +1,8 @@
+# Originais pesados: não precisam ir para o site
+assets/*.mov
+assets/*.MOV
+assets/foto-pablo1.JPG
+assets/foto-pablo2.JPG
+assets/foto-pablo3.JPG
+assets/foto-fachada.jpg
+.claude

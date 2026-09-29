@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plantão de Implantes em Cachoeiro de Itapemirim | Instituto Odontológico Dr. Pablo Santos</title>
+<meta name="description" content="Plantão de Implantes em Cachoeiro de Itapemirim nos dias 8, 9 e 10 de outubro. Avaliação gratuita para implante dentário e prótese protocolo no Instituto Odontológico Dr. Pablo Santos.">
+<meta name="theme-color" content="#0B4A8F">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Plantão de Implantes em Cachoeiro de Itapemirim">
+<meta property="og:description" content="Avaliação gratuita nos dias 8, 9 e 10 de outubro. Instituto Odontológico Dr. Pablo Santos.">
+
+<!-- ===== META PIXEL: cole aqui o código do Meta Pixel ===== -->
+
+<!-- ===== GOOGLE ADS: cole aqui a tag do Google Ads (gtag.js) ===== -->
+
+<script>
+  // Preencha com o valor do Google Ads, ex.: 'AW-123456789/AbCdEfGhIjk'
+  window.GOOGLE_ADS_SEND_TO = '';
+
+  // Mostra um aviso visível no lugar de uma imagem que não foi encontrada
+  function arquivoFaltando(img) {
+    var aviso = document.createElement('div');
+    aviso.className = 'faltando';
+    aviso.textContent = 'Arquivo não encontrado: ' + img.getAttribute('src');
+    img.replaceWith(aviso);
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/capa-video.jpg">
+
+<style>
+  :root {
+    --azul: #0B4A8F;
+    --azul-escuro: #07305E;
+    --azul-claro: #E8F0F9;
+    --tinta: #111A24;
+    --texto: #26323F;
+    --linha: #D5DCE4;
+    --verde: #08743A;
+    --verde-ativo: #065C2E;
+    --fundo: #FFFFFF;
+    --gutter: 16px;
+  }
+
+  /* Algarismos da fonte do sistema: o zero da Atkinson vem cortado (Ø) e pode confundir */
+  @font-face {
+    font-family: "Algarismos";
+    src: local("Roboto"), local("Roboto-Regular"), local("Helvetica Neue"), local("HelveticaNeue"), local("Arial"), local("ArialMT");
+    font-weight: 400;
+    unicode-range: U+0030-0039;
+  }
+  @font-face {
+    font-family: "Algarismos";
+    src: local("Roboto Bold"), local("Roboto-Bold"), local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Arial Bold"), local("Arial-BoldMT");
+    font-weight: 700;
+    unicode-range: U+0030-0039;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Algarismos", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.5;
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+
+  .coluna {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-left: max(var(--gutter), env(safe-area-inset-left));
+    padding-right: max(var(--gutter), env(safe-area-inset-right));
+  }
+
+  img { max-width: 100%; display: block; }
+  .junto { white-space: nowrap; }
+
+  h1, h2 { color: var(--tinta); margin: 0; line-height: 1.12; }
+  h1 { font-size: 40px; letter-spacing: -0.5px; }
+  h2 { font-size: 30px; margin-bottom: 18px; }
+  p { margin: 0 0 16px; }
+
+  section { padding: 44px 0; border-top: 1px solid var(--linha); }
+
+  /* ---------- Topo ---------- */
+  .topo { padding-top: max(10px, env(safe-area-inset-top)); padding-bottom: 36px; border-top: 0; }
+  .logo { width: 112px; height: auto; margin-bottom: 8px; }
+  .cidade { font-size: 21px; font-weight: 700; color: var(--azul); margin: 2px 0 10px; }
+  .chamada { font-size: 19px; line-height: 1.42; margin-bottom: 14px; }
+
+  /* Folhinha de calendário de parede */
+  .datas { text-align: center; margin: 0 0 16px; }
+  .folhinha {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 10px 0 0;
+    list-style: none;
+  }
+  .folha {
+    position: relative;
+    flex: 1 1 0;
+    max-width: 116px;
+    background: #fff;
+    border: 2px solid var(--azul-escuro);
+    border-radius: 4px 4px 6px 6px;
+    box-shadow: 4px 5px 0 var(--azul-escuro);
+  }
+  .folha:nth-child(1) { transform: rotate(-3deg); }
+  .folha:nth-child(2) { transform: rotate(1.5deg) translateY(4px); }
+  .folha:nth-child(3) { transform: rotate(-1deg); }
+  .folha::before, .folha::after {
+    /* argolas da folhinha */
+    content: "";
+    position: absolute;
+    top: -9px;
+    width: 8px;
+    height: 16px;
+    border-radius: 4px;
+    background: var(--tinta);
+  }
+  .folha::before { left: 24%; }
+  .folha::after { right: 24%; }
+  .folha .dia-semana {
+    display: block;
+    background: var(--azul);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 7px 2px 5px;
+  }
+  .folha .numero {
+    display: block;
+    color: var(--tinta);
+    font-family: Arial, Roboto, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1px;
+    padding: 6px 0 9px;
+  }
+  .mes {
+    display: block;
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--azul);
+    margin-top: 10px;
+  }
+
+  /* Vídeo */
+  .aviso-video { font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--tinta); text-align: center; margin: 0 0 10px; }
+  .video {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 24px;
+    aspect-ratio: 9 / 16;
+    background: var(--azul-escuro);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .video video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    background: var(--azul-escuro);
+  }
+  .play {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .play span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    color: var(--tinta);
+    font: inherit;
+    font-size: 21px;
+    font-weight: 700;
+    padding: 16px 24px 16px 20px;
+    border-radius: 12px;
+    border: 3px solid var(--azul-escuro);
+  }
+  .play span::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 14px 22px;
+    border-color: transparent transparent transparent var(--azul);
+  }
+  .play:active span { background: var(--azul-claro); }
+  .play:focus-visible { outline: 4px solid #F2B705; outline-offset: -4px; }
+  .video.tocando .play { display: none; }
+  .video .faltando { position: absolute; inset: auto 12px 12px; }
+
+  /* Botões */
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 60px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:focus-visible { outline: 4px solid #F2B705; outline-offset: 3px; }
+  .btn-whats { background: var(--verde); color: #fff; }
+  .btn-whats:active { background: var(--verde-ativo); }
+  .btn-whats svg { flex: none; width: 26px; height: 26px; fill: currentColor; }
+  .btn-mapa {
+    background: #fff;
+    color: var(--azul);
+    border: 3px solid var(--azul);
+  }
+  .btn-mapa:active { background: var(--azul-claro); }
+  .sob-botao { font-size: 17px; color: var(--texto); margin: 10px 0 0; }
+
+  /* No plantão você tem */
+  .itens { list-style: none; margin: 0; padding: 0; }
+  .itens li { padding: 16px 0; border-bottom: 1px solid var(--linha); }
+  .itens li:first-child { padding-top: 4px; }
+  .itens li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .itens strong { display: block; color: var(--tinta); font-size: 22px; line-height: 1.25; }
+  .itens span { display: block; margin-top: 4px; }
+
+  /* Bloco da idade */
+  .idade { background: var(--azul); color: #fff; border-top: 0; }
+  .idade h2 { color: #fff; }
+  .idade p:last-child { margin-bottom: 0; }
+
+  /* Quem atende */
+  .foto-pablo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; margin-bottom: 18px; }
+  .cro { color: var(--tinta); font-weight: 700; }
+
+  /* Onde fica */
+  .endereco { font-style: normal; margin-bottom: 18px; }
+  .endereco p { margin: 0 0 4px; }
+  .endereco .rua { font-size: 22px; font-weight: 700; color: var(--tinta); }
+  .endereco .extra { margin-top: 14px; }
+  .foto-fachada { width: 100%; border-radius: 8px; margin-bottom: 18px; }
+
+  /* Fechamento */
+  .fechamento p { font-size: 21px; color: var(--tinta); margin-bottom: 20px; }
+
+  /* Rodapé */
+  footer {
+    border-top: 1px solid var(--linha);
+    padding: 28px 0 32px;
+    font-size: 17px;
+    color: var(--texto);
+  }
+  footer p { margin: 0 0 4px; }
+  footer strong { color: var(--tinta); }
+
+  /* Barra fixa */
+  .barra {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    border-top: 1px solid var(--linha);
+    padding: 10px max(var(--gutter), env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(var(--gutter), env(safe-area-inset-left));
+    transform: translateY(110%);
+    visibility: hidden;
+    transition: transform .25s ease, visibility 0s linear .25s;
+  }
+  .barra.visivel {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform .25s ease, visibility 0s;
+  }
+  .barra .btn { max-width: 448px; margin: 0 auto; font-size: 19px; gap: 8px; padding: 12px 10px; }
+  .barra .btn svg { width: 24px; height: 24px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .barra, .barra.visivel { transition: none; }
+  }
+
+  /* Aviso de arquivo faltando */
+  .faltando {
+    border: 3px dashed #B00020;
+    background: #FFF4F4;
+    color: #B00020;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 18px 14px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    word-break: break-word;
+  }
+
+  @media (max-width: 370px) {
+    h1 { font-size: 38px; }
+    .folha .numero { font-size: 54px; }
+    .folha .dia-semana { font-size: 17px; }
+    .barra .btn { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 32 32"><path d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.6 4.54 1.75 6.51L3 29l6.66-1.74A13 13 0 0 0 16.04 29C23.2 29 29 23.17 29 16S23.2 3 16.04 3Zm0 23.8c-1.95 0-3.86-.52-5.53-1.51l-.4-.24-3.95 1.03 1.06-3.84-.26-.4A10.77 10.77 0 0 1 5.2 16c0-5.97 4.87-10.82 10.85-10.82 5.97 0 10.8 4.85 10.8 10.82 0 5.96-4.84 10.8-10.8 10.8Zm5.93-8.1c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.51-.16-.73.16-.22.33-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.14 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.13-.3-.21-.62-.38Z"/></symbol></svg>
+
+<main>
+  <!-- 1. Topo -->
+  <section class="topo">
+    <div class="coluna">
+      <img class="logo" src="assets/logo.png" width="720" height="420" alt="Instituto Odontológico Dr. Pablo Santos" onerror="arquivoFaltando(this)">
+
+      <h1>Plantão de Implantes</h1>
+      <p class="cidade">Em Cachoeiro de Itapemirim</p>
+      <p class="chamada">Avaliação gratuita para quem quer trocar a dentadura solta ou os dentes que faltam por dentes fixos.</p>
+
+      <div class="datas">
+        <ol class="folhinha" aria-label="Quinta-feira 8, sexta-feira 9 e sábado 10 de outubro">
+          <li class="folha"><span class="dia-semana">Quinta</span><span class="numero">8</span></li>
+          <li class="folha"><span class="dia-semana">Sexta</span><span class="numero">9</span></li>
+          <li class="folha"><span class="dia-semana">Sábado</span><span class="numero">10</span></li>
+        </ol>
+        <span class="mes" aria-hidden="true">de outubro</span>
+      </div>
+
+      <p class="aviso-video">Aperte no vídeo para ouvir <span class="junto">o Dr. Pablo</span></p>
+      <div class="video" id="video">
+        <video id="player" poster="assets/capa-video.jpg" preload="none" playsinline webkit-playsinline data-src="assets/video-plantao.mp4"></video>
+        <button class="play" id="play" type="button" aria-label="Tocar o vídeo do Dr. Pablo"><span>Assistir</span></button>
+      </div>
+
+      <a class="btn btn-whats js-whats js-whats-principal" href="https://wa.me/5528992574073?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Plant%C3%A3o%20de%20Implantes%20(8%2C%209%20e%2010%20de%20outubro)." target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+        Agendar minha avaliação no WhatsApp
+      </a>
+      <p class="sob-botao">Abre o WhatsApp da clínica. Nossa equipe responde em poucos minutos.</p>
+    </div>
+  </section>
+
+  <!-- 2. O que tem no plantão -->
+  <section>
+    <div class="coluna">
+      <h2>No plantão você tem</h2>
+      <ul class="itens">
+        <li><strong>Avaliação gratuita</strong><span>com a nossa equipe especializada em implantes</span></li>
+        <li><strong>Radiografia inclusa</strong></li>
+        <li><strong>Pagamento facilitado no boleto</strong><span>a parcela é combinada com você, do jeito que cabe no seu bolso</span></li>
+        <li><strong>Condições especiais</strong><span>que só valem para quem fechar nesses 3 dias</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Idade -->
+  <section class="idade">
+    <div class="coluna">
+      <h2>Acha que já passou da idade?</h2>
+      <p>A idade, sozinha, não impede o implante. Temos pacientes com mais de 80 anos que fizeram o tratamento com a gente. Quem diz o que é possível no seu caso é a avaliação.</p>
+    </div>
+  </section>
+
+  <!-- 4. Quem atende -->
+  <section>
+    <div class="coluna">
+      <h2>Quem atende</h2>
+      <img class="foto-pablo" src="assets/foto-pablo.jpg" width="880" height="1100" loading="lazy" decoding="async" alt="Dr. Pablo Santos, de terno azul, no Instituto Odontológico" onerror="arquivoFaltando(this)">
+      <p>Dr. Pablo Santos, doutor e especialista em implantodontia, e equipe. Mais de 15 anos com implantes e mais de 8.000 casos. <span class="cro">CRO-ES 005206.</span></p>
+    </div>
+  </section>
+
+  <!-- 5. Onde fica -->
+  <section>
+    <div class="coluna">
+      <h2>Onde fica</h2>
+      <address class="endereco">
+        <p class="rua">Rod. Ricardo Barbieri, 149</p>
+        <p>Rui Pinto Bandeira, Cachoeiro de Itapemirim</p>
+        <p>Ao lado da Igreja Monte Moriá</p>
+        <p class="extra">Tem estacionamento</p>
+        <p>Tem ponto de ônibus perto</p>
+      </address>
+      <img class="foto-fachada" src="assets/foto-fachada-web.jpg" width="800" height="1190" loading="lazy" decoding="async" alt="Fachada do prédio do Instituto Odontológico Dr. Pablo Santos, branco com faixas azuis" onerror="arquivoFaltando(this)">
+      <a class="btn btn-mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Instituto+Odontol%C3%B3gico+Dr.+Pablo+Santos%2C+Rod.+Ricardo+Barbieri%2C+149%2C+Cachoeiro+de+Itapemirim" target="_blank" rel="noopener">Ver no mapa</a>
+    </div>
+  </section>
+
+  <!-- 6. Fechamento -->
+  <section class="fechamento">
+    <div class="coluna">
+      <p>Os horários dos dias 8, 9 e 10 de outubro estão sendo preenchidos. Garanta o seu pelo WhatsApp.</p>
+      <a class="btn btn-whats js-whats js-whats-principal" href="https://wa.me/5528992574073?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Plant%C3%A3o%20de%20Implantes%20(8%2C%209%20e%2010%20de%20outubro)." target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+        Agendar minha avaliação no WhatsApp
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- 7. Rodapé -->
+<footer>
+  <div class="coluna">
+    <p><strong>Instituto Odontológico Dr. Pablo Santos</strong></p>
+    <p>Dr. Pablo Santos, CRO-ES 005206</p>
+    <p>Cachoeiro de Itapemirim, ES</p>
+  </div>
+</footer>
+
+<!-- 8. Barra fixa -->
+<div class="barra" id="barra">
+  <a class="btn btn-whats js-whats" href="https://wa.me/5528992574073?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Plant%C3%A3o%20de%20Implantes%20(8%2C%209%20e%2010%20de%20outubro)." target="_blank" rel="noopener" tabindex="-1">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+    Agendar avaliação no WhatsApp
+  </a>
+</div>
+
+<script>
+(function () {
+  var TELEFONE = '5528992574073';
+  var MENSAGEM = 'Olá! Vim pelo site e quero agendar minha avaliação do Plantão de Implantes (8, 9 e 10 de outubro).';
+  var LINK_WHATS = 'https://wa.me/' + TELEFONE + '?text=' + encodeURIComponent(MENSAGEM);
+
+  var botoes = document.querySelectorAll('.js-whats');
+  for (var i = 0; i < botoes.length; i++) {
+    botoes[i].href = LINK_WHATS;
+  }
+
+  // Rastreamento: nunca pode impedir o clique
+  document.addEventListener('click', function (e) {
+    var alvo = e.target.closest ? e.target.closest('.js-whats') : null;
+    if (!alvo) return;
+    try {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact');
+      }
+    } catch (err) {}
+    try {
+      if (typeof window.gtag === 'function' && window.GOOGLE_ADS_SEND_TO) {
+        window.gtag('event', 'conversion', { send_to: window.GOOGLE_ADS_SEND_TO });
+      }
+    } catch (err) {}
+  });
+
+  // Vídeo: só carrega quando a pessoa aperta
+  var caixa = document.getElementById('video');
+  var player = document.getElementById('player');
+  var play = document.getElementById('play');
+
+  function avisoCaixa(texto) {
+    if (caixa.querySelector('.faltando')) return;
+    var aviso = document.createElement('div');
+    aviso.className = 'faltando';
+    aviso.textContent = texto;
+    caixa.appendChild(aviso);
+  }
+
+  var capa = new Image();
+  capa.onerror = function () { avisoCaixa('Arquivo não encontrado: assets/capa-video.jpg'); };
+  capa.src = player.getAttribute('poster');
+
+  player.addEventListener('error', function () {
+    avisoCaixa('Arquivo não encontrado: ' + player.getAttribute('data-src'));
+    caixa.classList.remove('tocando');
+  });
+
+  play.addEventListener('click', function () {
+    if (!player.getAttribute('src')) {
+      player.src = player.getAttribute('data-src');
+    }
+    player.controls = true;
+    caixa.classList.add('tocando');
+    var p = player.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  });
+
+  // Barra fixa: aparece só quando nenhum outro botão verde está na tela
+  var barra = document.getElementById('barra');
+  var botaoBarra = barra.querySelector('a');
+  function mostrarBarra(mostrar) {
+    barra.classList.toggle('visivel', mostrar);
+    barra.setAttribute('aria-hidden', mostrar ? 'false' : 'true');
+    botaoBarra.tabIndex = mostrar ? 0 : -1;
+  }
+
+  var principais = document.querySelectorAll('.js-whats-principal');
+  if ('IntersectionObserver' in window) {
+    var visiveis = new Set();
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (en.isIntersecting) { visiveis.add(en.target); } else { visiveis.delete(en.target); }
+      });
+      mostrarBarra(visiveis.size === 0);
+    }, { threshold: 0 });
+    for (var j = 0; j < principais.length; j++) { observador.observe(principais[j]); }
+  } else {
+    mostrarBarra(true);
+  }
+})();
+</script>
+</body>
+</html>

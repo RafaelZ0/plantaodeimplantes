@@ -1,0 +1,10 @@
+# Originais pesados (ficam só no computador)
+assets/*.mov
+assets/*.MOV
+assets/foto-pablo1.JPG
+assets/foto-pablo2.JPG
+assets/foto-pablo3.JPG
+assets/foto-fachada.jpg
+
+# Configuração local do editor
+.claude/
