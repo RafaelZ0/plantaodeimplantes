@@ -71,7 +71,7 @@
     color: var(--texto);
     font-family: "Algarismos", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     font-size: 19px;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   /* Coluna central; fora dela, no desktop, fica o azul bem claro */
@@ -91,22 +91,22 @@
 
   h1, h2 { color: var(--tinta); margin: 0; line-height: 1.12; }
   h1 { font-size: 40px; letter-spacing: -0.5px; }
-  h2 { font-size: 30px; margin-bottom: 16px; }
-  p { margin: 0 0 16px; }
+  h2 { font-size: 30px; margin-bottom: 24px; }
+  p { margin: 0 0 20px; }
 
-  section { padding: 36px 0; }
+  section { padding: 56px 0; }
   .fundo-claro { background: var(--azul-claro); }
   .fundo-azul { background: var(--azul); color: #fff; }
   .fundo-azul h2 { color: #fff; }
 
   /* ---------- Topo ---------- */
-  .topo { padding-top: max(8px, env(safe-area-inset-top)); }
-  .logo { width: 160px; margin: 0 auto 4px; }
-  .cidade { font-size: 21px; font-weight: 700; color: var(--azul); margin: 2px 0 10px; }
-  .chamada { font-size: 19px; line-height: 1.42; margin-bottom: 8px; }
+  .topo { padding-top: max(20px, env(safe-area-inset-top)); }
+  .logo { width: 160px; margin: 0 auto 24px; }
+  .cidade { font-size: 21px; font-weight: 700; color: var(--azul); margin: 8px 0 18px; }
+  .chamada { font-size: 19px; line-height: 1.5; margin-bottom: 28px; }
 
   /* Folhinha de calendário de parede */
-  .datas { text-align: center; margin: 0 0 14px; }
+  .datas { text-align: center; margin: 0 0 36px; }
   .folhinha {
     display: flex;
     justify-content: center;
@@ -160,26 +160,26 @@
     font-weight: 700;
     color: var(--azul);
     line-height: 1.2;
-    margin-top: 8px;
+    margin-top: 18px;
   }
-  .datas-extra { display: block; font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--tinta); margin-top: 4px; }
+  .datas-extra { display: block; font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--tinta); margin-top: 10px; }
 
   /* Folhinha menor, no fechamento */
-  .datas-pequena { margin-bottom: 20px; }
+  .datas-pequena { margin-bottom: 32px; }
   .datas-pequena .folhinha { gap: 10px; }
   .datas-pequena .folha { max-width: 84px; border-color: #fff; }
   .datas-pequena .folha::before, .datas-pequena .folha::after { background: #fff; top: -8px; width: 7px; height: 14px; }
   .datas-pequena .folha .dia-semana { background: var(--azul-escuro); font-size: 16px; padding: 6px 2px 4px; }
   .datas-pequena .folha .numero { font-size: 40px; padding: 5px 0 7px; }
-  .datas-pequena .mes { color: #fff; font-size: 22px; margin-top: 8px; }
+  .datas-pequena .mes { color: #fff; font-size: 22px; margin-top: 16px; }
 
   /* Vídeo */
-  .aviso-video { font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--tinta); text-align: center; margin: 0 0 10px; }
+  .aviso-video { font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--tinta); text-align: center; margin: 0 0 16px; }
   .video {
     position: relative;
     width: 100%;
     max-width: 290px;
-    margin: 0 auto 14px;
+    margin: 0 auto 20px;
     aspect-ratio: 9 / 16;
     background: var(--azul-escuro);
     border-radius: 12px;
@@ -240,7 +240,7 @@
   .play:focus-visible { outline: 4px solid #F2B705; outline-offset: -4px; }
   .video.tocando .play { display: none; }
   .video .faltando { position: absolute; inset: auto 12px 12px; }
-  .legenda-video { font-size: 18px; margin: 0 0 22px; }
+  .legenda-video { font-size: 18px; margin: 0 0 32px; }
 
   /* Botões */
   .btn {
@@ -271,16 +271,16 @@
     border: 3px solid var(--azul);
   }
   .btn-mapa:active { background: var(--azul-claro); }
-  .sob-botao { font-size: 17px; color: var(--texto); margin: 10px 0 0; }
+  .sob-botao { font-size: 17px; color: var(--texto); margin: 14px 0 0; }
 
   /* No plantão você tem */
   .itens { list-style: none; margin: 0; padding: 0; }
-  .itens li + li { margin-top: 18px; }
+  .itens li + li { margin-top: 30px; }
   .itens strong { display: block; color: var(--tinta); font-size: 24px; line-height: 1.2; }
-  .itens span { display: block; margin-top: 2px; }
+  .itens span { display: block; margin-top: 6px; }
 
   /* Bloco da idade */
-  .paciente { margin: 20px 0 0; }
+  .paciente { margin: 32px 0 0; }
   .paciente img {
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -289,34 +289,34 @@
     object-position: top;
     border-radius: 8px;
   }
-  .paciente figcaption { font-size: 18px; font-weight: 700; margin-top: 8px; }
+  .paciente figcaption { font-size: 18px; font-weight: 700; margin-top: 14px; }
   .paciente .faltando { margin-bottom: 0; }
 
   /* Onde fica */
-  .endereco { font-style: normal; margin-bottom: 14px; }
-  .endereco p { margin: 0; }
+  .endereco { font-style: normal; margin-bottom: 24px; }
+  .endereco p { margin: 0 0 4px; }
   .endereco .rua { font-size: 22px; font-weight: 700; color: var(--tinta); }
-  .endereco .extra { margin-top: 10px; }
+  .endereco .extra { margin-top: 18px; }
   .foto-fachada {
     width: 100%;
     aspect-ratio: 4 / 3;
     max-height: 360px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   /* Fechamento */
-  .fechamento p { font-size: 21px; color: #fff; margin-bottom: 20px; }
+  .fechamento p { font-size: 21px; color: #fff; margin-bottom: 32px; }
 
   /* Rodapé */
   footer {
     background: var(--azul-claro);
-    padding: 26px 0 30px;
+    padding: 40px 0 44px;
     font-size: 17px;
     color: var(--texto);
   }
-  footer p { margin: 0 0 4px; }
+  footer p { margin: 0 0 6px; }
   footer strong { color: var(--tinta); }
 
   /* Barra fixa */
