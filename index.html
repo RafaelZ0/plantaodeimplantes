@@ -13,11 +13,20 @@
 
 <!-- ===== META PIXEL: cole aqui o código do Meta Pixel ===== -->
 
-<!-- ===== GOOGLE ADS: cole aqui a tag do Google Ads (gtag.js) ===== -->
+<!-- ===== GOOGLE ADS: tag do Google (conta 313-624-9629) ===== -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10991953784"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-10991953784');
+</script>
 
 <script>
-  // Preencha com o valor do Google Ads, ex.: 'AW-123456789/AbCdEfGhIjk'
-  window.GOOGLE_ADS_SEND_TO = '';
+  // Conversão "Clique WhatsApp" do Google Ads (disparada no clique de qualquer botão de WhatsApp)
+  window.GOOGLE_ADS_SEND_TO = 'AW-10991953784/Pcx7CNzZ_4odEPjOr_ko';
 
   // Mostra um aviso visível no lugar de uma imagem que não foi encontrada
   function arquivoFaltando(img) {
@@ -508,7 +517,7 @@
     } catch (err) {}
     try {
       if (typeof window.gtag === 'function' && window.GOOGLE_ADS_SEND_TO) {
-        window.gtag('event', 'conversion', { send_to: window.GOOGLE_ADS_SEND_TO });
+        window.gtag('event', 'conversion', { send_to: window.GOOGLE_ADS_SEND_TO, value: 1.0, currency: 'BRL' });
       }
     } catch (err) {}
   });
