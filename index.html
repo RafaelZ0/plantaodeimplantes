@@ -37,10 +37,10 @@
   :root {
     --azul: #0B4A8F;
     --azul-escuro: #07305E;
-    --azul-claro: #E8F0F9;
+    --azul-claro: #EAF2FB;
+    --fora: #DCE8F5;
     --tinta: #111A24;
     --texto: #26323F;
-    --linha: #D5DCE4;
     --verde: #08743A;
     --verde-ativo: #065C2E;
     --fundo: #FFFFFF;
@@ -63,43 +63,50 @@
 
   *, *::before, *::after { box-sizing: border-box; }
 
-  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background: var(--fora); }
 
   body {
     margin: 0;
-    background: var(--fundo);
+    background: var(--fora);
     color: var(--texto);
     font-family: "Algarismos", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     font-size: 19px;
     line-height: 1.5;
-    padding-bottom: calc(96px + env(safe-area-inset-bottom));
   }
 
-  .coluna {
+  /* Coluna central; fora dela, no desktop, fica o azul bem claro */
+  .pagina {
     max-width: 480px;
     margin: 0 auto;
+    background: var(--fundo);
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+  .coluna {
     padding-left: max(var(--gutter), env(safe-area-inset-left));
     padding-right: max(var(--gutter), env(safe-area-inset-right));
   }
 
-  img { max-width: 100%; display: block; }
+  img { max-width: 100%; height: auto; display: block; }
   .junto { white-space: nowrap; }
 
   h1, h2 { color: var(--tinta); margin: 0; line-height: 1.12; }
   h1 { font-size: 40px; letter-spacing: -0.5px; }
-  h2 { font-size: 30px; margin-bottom: 18px; }
+  h2 { font-size: 30px; margin-bottom: 16px; }
   p { margin: 0 0 16px; }
 
-  section { padding: 44px 0; border-top: 1px solid var(--linha); }
+  section { padding: 36px 0; }
+  .fundo-claro { background: var(--azul-claro); }
+  .fundo-azul { background: var(--azul); color: #fff; }
+  .fundo-azul h2 { color: #fff; }
 
   /* ---------- Topo ---------- */
-  .topo { padding-top: max(10px, env(safe-area-inset-top)); padding-bottom: 36px; border-top: 0; }
-  .logo { width: 112px; height: auto; margin-bottom: 8px; }
+  .topo { padding-top: max(8px, env(safe-area-inset-top)); }
+  .logo { width: 160px; margin: 0 auto 4px; }
   .cidade { font-size: 21px; font-weight: 700; color: var(--azul); margin: 2px 0 10px; }
-  .chamada { font-size: 19px; line-height: 1.42; margin-bottom: 14px; }
+  .chamada { font-size: 19px; line-height: 1.42; margin-bottom: 8px; }
 
   /* Folhinha de calendário de parede */
-  .datas { text-align: center; margin: 0 0 16px; }
+  .datas { text-align: center; margin: 0 0 14px; }
   .folhinha {
     display: flex;
     justify-content: center;
@@ -114,12 +121,9 @@
     max-width: 116px;
     background: #fff;
     border: 2px solid var(--azul-escuro);
+    border-bottom-width: 6px;
     border-radius: 4px 4px 6px 6px;
-    box-shadow: 4px 5px 0 var(--azul-escuro);
   }
-  .folha:nth-child(1) { transform: rotate(-3deg); }
-  .folha:nth-child(2) { transform: rotate(1.5deg) translateY(4px); }
-  .folha:nth-child(3) { transform: rotate(-1deg); }
   .folha::before, .folha::after {
     /* argolas da folhinha */
     content: "";
@@ -155,16 +159,27 @@
     font-size: 27px;
     font-weight: 700;
     color: var(--azul);
-    margin-top: 10px;
+    line-height: 1.2;
+    margin-top: 8px;
   }
+  .datas-extra { display: block; font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--tinta); margin-top: 4px; }
+
+  /* Folhinha menor, no fechamento */
+  .datas-pequena { margin-bottom: 20px; }
+  .datas-pequena .folhinha { gap: 10px; }
+  .datas-pequena .folha { max-width: 84px; border-color: #fff; }
+  .datas-pequena .folha::before, .datas-pequena .folha::after { background: #fff; top: -8px; width: 7px; height: 14px; }
+  .datas-pequena .folha .dia-semana { background: var(--azul-escuro); font-size: 16px; padding: 6px 2px 4px; }
+  .datas-pequena .folha .numero { font-size: 40px; padding: 5px 0 7px; }
+  .datas-pequena .mes { color: #fff; font-size: 22px; margin-top: 8px; }
 
   /* Vídeo */
   .aviso-video { font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--tinta); text-align: center; margin: 0 0 10px; }
   .video {
     position: relative;
     width: 100%;
-    max-width: 360px;
-    margin: 0 auto 24px;
+    max-width: 290px;
+    margin: 0 auto 14px;
     aspect-ratio: 9 / 16;
     background: var(--azul-escuro);
     border-radius: 12px;
@@ -188,35 +203,44 @@
     font: inherit;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     -webkit-tap-highlight-color: transparent;
   }
-  .play span {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  .play .circulo {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
     background: #fff;
-    color: var(--tinta);
-    font: inherit;
-    font-size: 21px;
-    font-weight: 700;
-    padding: 16px 24px 16px 20px;
-    border-radius: 12px;
     border: 3px solid var(--azul-escuro);
   }
-  .play span::before {
+  .play .circulo::before {
+    /* triângulo do play */
     content: "";
-    width: 0;
-    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -17px 0 0 -10px;
     border-style: solid;
-    border-width: 14px 0 14px 22px;
+    border-width: 17px 0 17px 28px;
     border-color: transparent transparent transparent var(--azul);
   }
-  .play:active span { background: var(--azul-claro); }
+  .play .rotulo {
+    background: var(--azul-escuro);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 6px;
+  }
+  .play:active .circulo { background: var(--azul-claro); }
   .play:focus-visible { outline: 4px solid #F2B705; outline-offset: -4px; }
   .video.tocando .play { display: none; }
   .video .faltando { position: absolute; inset: auto 12px 12px; }
+  .legenda-video { font-size: 18px; margin: 0 0 22px; }
 
   /* Botões */
   .btn {
@@ -240,6 +264,7 @@
   .btn-whats { background: var(--verde); color: #fff; }
   .btn-whats:active { background: var(--verde-ativo); }
   .btn-whats svg { flex: none; width: 26px; height: 26px; fill: currentColor; }
+  .fundo-azul .btn-whats { border: 2px solid #fff; }
   .btn-mapa {
     background: #fff;
     color: var(--azul);
@@ -250,35 +275,44 @@
 
   /* No plantão você tem */
   .itens { list-style: none; margin: 0; padding: 0; }
-  .itens li { padding: 16px 0; border-bottom: 1px solid var(--linha); }
-  .itens li:first-child { padding-top: 4px; }
-  .itens li:last-child { border-bottom: 0; padding-bottom: 0; }
-  .itens strong { display: block; color: var(--tinta); font-size: 22px; line-height: 1.25; }
-  .itens span { display: block; margin-top: 4px; }
+  .itens li + li { margin-top: 18px; }
+  .itens strong { display: block; color: var(--tinta); font-size: 24px; line-height: 1.2; }
+  .itens span { display: block; margin-top: 2px; }
 
   /* Bloco da idade */
-  .idade { background: var(--azul); color: #fff; border-top: 0; }
-  .idade h2 { color: #fff; }
-  .idade p:last-child { margin-bottom: 0; }
-
-  /* Quem atende */
-  .foto-pablo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; margin-bottom: 18px; }
-  .cro { color: var(--tinta); font-weight: 700; }
+  .paciente { margin: 20px 0 0; }
+  .paciente img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 360px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+  }
+  .paciente figcaption { font-size: 18px; font-weight: 700; margin-top: 8px; }
+  .paciente .faltando { margin-bottom: 0; }
 
   /* Onde fica */
-  .endereco { font-style: normal; margin-bottom: 18px; }
-  .endereco p { margin: 0 0 4px; }
+  .endereco { font-style: normal; margin-bottom: 14px; }
+  .endereco p { margin: 0; }
   .endereco .rua { font-size: 22px; font-weight: 700; color: var(--tinta); }
-  .endereco .extra { margin-top: 14px; }
-  .foto-fachada { width: 100%; border-radius: 8px; margin-bottom: 18px; }
+  .endereco .extra { margin-top: 10px; }
+  .foto-fachada {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
 
   /* Fechamento */
-  .fechamento p { font-size: 21px; color: var(--tinta); margin-bottom: 20px; }
+  .fechamento p { font-size: 21px; color: #fff; margin-bottom: 20px; }
 
   /* Rodapé */
   footer {
-    border-top: 1px solid var(--linha);
-    padding: 28px 0 32px;
+    background: var(--azul-claro);
+    padding: 26px 0 30px;
     font-size: 17px;
     color: var(--texto);
   }
@@ -292,19 +326,20 @@
     right: 0;
     bottom: 0;
     z-index: 10;
+    max-width: 480px;
+    margin: 0 auto;
     background: #fff;
-    border-top: 1px solid var(--linha);
     padding: 10px max(var(--gutter), env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(var(--gutter), env(safe-area-inset-left));
     transform: translateY(110%);
     visibility: hidden;
-    transition: transform .25s ease, visibility 0s linear .25s;
+    transition: transform .2s ease, visibility 0s linear .2s;
   }
   .barra.visivel {
     transform: translateY(0);
     visibility: visible;
-    transition: transform .25s ease, visibility 0s;
+    transition: transform .2s ease, visibility 0s;
   }
-  .barra .btn { max-width: 448px; margin: 0 auto; font-size: 19px; gap: 8px; padding: 12px 10px; }
+  .barra .btn { font-size: 19px; gap: 8px; padding: 12px 10px; }
   .barra .btn svg { width: 24px; height: 24px; }
 
   @media (prefers-reduced-motion: reduce) {
@@ -328,6 +363,7 @@
     h1 { font-size: 38px; }
     .folha .numero { font-size: 54px; }
     .folha .dia-semana { font-size: 17px; }
+    .datas-pequena .folha .numero { font-size: 38px; }
     .barra .btn { font-size: 18px; }
   }
 </style>
@@ -335,6 +371,7 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 32 32"><path d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.6 4.54 1.75 6.51L3 29l6.66-1.74A13 13 0 0 0 16.04 29C23.2 29 29 23.17 29 16S23.2 3 16.04 3Zm0 23.8c-1.95 0-3.86-.52-5.53-1.51l-.4-.24-3.95 1.03 1.06-3.84-.26-.4A10.77 10.77 0 0 1 5.2 16c0-5.97 4.87-10.82 10.85-10.82 5.97 0 10.8 4.85 10.8 10.82 0 5.96-4.84 10.8-10.8 10.8Zm5.93-8.1c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.51-.16-.73.16-.22.33-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.14 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.13-.3-.21-.62-.38Z"/></symbol></svg>
 
+<div class="pagina">
 <main>
   <!-- 1. Topo -->
   <section class="topo">
@@ -352,13 +389,15 @@
           <li class="folha"><span class="dia-semana">Sábado</span><span class="numero">10</span></li>
         </ol>
         <span class="mes" aria-hidden="true">de outubro</span>
+        <span class="datas-extra">Avaliação gratuita e <span class="junto">parcelas no boleto</span></span>
       </div>
 
       <p class="aviso-video">Aperte no vídeo para ouvir <span class="junto">o Dr. Pablo</span></p>
       <div class="video" id="video">
         <video id="player" poster="assets/capa-video.jpg" preload="none" playsinline webkit-playsinline data-src="assets/video-plantao.mp4"></video>
-        <button class="play" id="play" type="button" aria-label="Tocar o vídeo do Dr. Pablo"><span>Assistir</span></button>
+        <button class="play" id="play" type="button"><span class="circulo" aria-hidden="true"></span><span class="rotulo">Assistir o vídeo</span></button>
       </div>
+      <p class="legenda-video">Dr. Pablo Santos, doutor e especialista em implantodontia, e equipe. Mais de 15 anos com implantes e mais de 8.000 casos. <span class="junto">CRO-ES 005206.</span></p>
 
       <a class="btn btn-whats js-whats js-whats-principal" href="https://wa.me/5528992574073?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Plant%C3%A3o%20de%20Implantes%20(8%2C%209%20e%2010%20de%20outubro)." target="_blank" rel="noopener">
         <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
@@ -369,7 +408,7 @@
   </section>
 
   <!-- 2. O que tem no plantão -->
-  <section>
+  <section class="fundo-claro">
     <div class="coluna">
       <h2>No plantão você tem</h2>
       <ul class="itens">
@@ -382,23 +421,18 @@
   </section>
 
   <!-- 3. Idade -->
-  <section class="idade">
+  <section class="fundo-azul">
     <div class="coluna">
       <h2>Acha que já passou da idade?</h2>
       <p>A idade, sozinha, não impede o implante. Temos pacientes com mais de 80 anos que fizeram o tratamento com a gente. Quem diz o que é possível no seu caso é a avaliação.</p>
+      <figure class="paciente">
+        <img src="assets/paciente.jpg" width="800" height="881" loading="lazy" decoding="async" alt="Dona Dalcina, de vestido rosa, ao lado do Dr. Pablo Santos na recepção da clínica" onerror="arquivoFaltando(this)">
+        <figcaption>Dona Dalcina, 87 anos</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- 4. Quem atende -->
-  <section>
-    <div class="coluna">
-      <h2>Quem atende</h2>
-      <img class="foto-pablo" src="assets/foto-pablo.jpg" width="880" height="1100" loading="lazy" decoding="async" alt="Dr. Pablo Santos, de terno azul, no Instituto Odontológico" onerror="arquivoFaltando(this)">
-      <p>Dr. Pablo Santos, doutor e especialista em implantodontia, e equipe. Mais de 15 anos com implantes e mais de 8.000 casos. <span class="cro">CRO-ES 005206.</span></p>
-    </div>
-  </section>
-
-  <!-- 5. Onde fica -->
+  <!-- 4. Onde fica -->
   <section>
     <div class="coluna">
       <h2>Onde fica</h2>
@@ -409,14 +443,22 @@
         <p class="extra">Tem estacionamento</p>
         <p>Tem ponto de ônibus perto</p>
       </address>
-      <img class="foto-fachada" src="assets/foto-fachada-web.jpg" width="800" height="1190" loading="lazy" decoding="async" alt="Fachada do prédio do Instituto Odontológico Dr. Pablo Santos, branco com faixas azuis" onerror="arquivoFaltando(this)">
+      <img class="foto-fachada" src="assets/foto-fachada-placa.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Placa do Instituto Odontológico Dr. Pablo Santos na fachada do prédio" onerror="arquivoFaltando(this)">
       <a class="btn btn-mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Instituto+Odontol%C3%B3gico+Dr.+Pablo+Santos%2C+Rod.+Ricardo+Barbieri%2C+149%2C+Cachoeiro+de+Itapemirim" target="_blank" rel="noopener">Ver no mapa</a>
     </div>
   </section>
 
-  <!-- 6. Fechamento -->
-  <section class="fechamento">
+  <!-- 5. Fechamento -->
+  <section class="fechamento fundo-azul">
     <div class="coluna">
+      <div class="datas datas-pequena">
+        <ol class="folhinha" aria-label="Quinta-feira 8, sexta-feira 9 e sábado 10 de outubro">
+          <li class="folha"><span class="dia-semana">Quinta</span><span class="numero">8</span></li>
+          <li class="folha"><span class="dia-semana">Sexta</span><span class="numero">9</span></li>
+          <li class="folha"><span class="dia-semana">Sábado</span><span class="numero">10</span></li>
+        </ol>
+        <span class="mes" aria-hidden="true">de outubro</span>
+      </div>
       <p>Os horários dos dias 8, 9 e 10 de outubro estão sendo preenchidos. Garanta o seu pelo WhatsApp.</p>
       <a class="btn btn-whats js-whats js-whats-principal" href="https://wa.me/5528992574073?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Plant%C3%A3o%20de%20Implantes%20(8%2C%209%20e%2010%20de%20outubro)." target="_blank" rel="noopener">
         <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
@@ -426,7 +468,7 @@
   </section>
 </main>
 
-<!-- 7. Rodapé -->
+<!-- 6. Rodapé -->
 <footer>
   <div class="coluna">
     <p><strong>Instituto Odontológico Dr. Pablo Santos</strong></p>
@@ -434,8 +476,9 @@
     <p>Cachoeiro de Itapemirim, ES</p>
   </div>
 </footer>
+</div>
 
-<!-- 8. Barra fixa -->
+<!-- 7. Barra fixa -->
 <div class="barra" id="barra">
   <a class="btn btn-whats js-whats" href="https://wa.me/5528992574073?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Plant%C3%A3o%20de%20Implantes%20(8%2C%209%20e%2010%20de%20outubro)." target="_blank" rel="noopener" tabindex="-1">
     <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
@@ -511,19 +554,27 @@
     botaoBarra.tabIndex = mostrar ? 0 : -1;
   }
 
+  // Considera "visível" qualquer parte do botão dentro da tela.
+  // O IntersectionObserver avisa quando algo muda; a posição real também é conferida a cada rolagem.
   var principais = document.querySelectorAll('.js-whats-principal');
-  if ('IntersectionObserver' in window) {
-    var visiveis = new Set();
-    var observador = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (en) {
-        if (en.isIntersecting) { visiveis.add(en.target); } else { visiveis.delete(en.target); }
-      });
-      mostrarBarra(visiveis.size === 0);
-    }, { threshold: 0 });
-    for (var j = 0; j < principais.length; j++) { observador.observe(principais[j]); }
-  } else {
-    mostrarBarra(true);
+  function algumBotaoVisivel() {
+    var altura = window.innerHeight || document.documentElement.clientHeight;
+    for (var k = 0; k < principais.length; k++) {
+      var r = principais[k].getBoundingClientRect();
+      if (r.bottom > 0 && r.top < altura) return true;
+    }
+    return false;
   }
+  function atualizarBarra() {
+    mostrarBarra(!algumBotaoVisivel());
+  }
+  if ('IntersectionObserver' in window) {
+    var observador = new IntersectionObserver(atualizarBarra, { threshold: [0, 1] });
+    for (var j = 0; j < principais.length; j++) { observador.observe(principais[j]); }
+  }
+  window.addEventListener('scroll', atualizarBarra, { passive: true });
+  window.addEventListener('resize', atualizarBarra);
+  atualizarBarra();
 })();
 </script>
 </body>
